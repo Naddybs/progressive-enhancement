@@ -12,31 +12,59 @@
 				url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%2366E5BF" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798zM16 23.547l-6.983 3.671 1.334-7.776-5.65-5.507 7.808-1.134 3.492-7.075 3.492 7.075 7.807 1.134-5.65 5.507 1.334 7.776-6.983-3.671z"></path></svg>')
 				url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="%2366E5BF" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path></svg>')
 			*/
-
-			/* Hint: met Grid Layout kun je elementen over elkaar heen leggen */
+			.rating-form {
+				display: flex;
+				flex-direction: column;
+			}
+			.star + label {
+				cursor: pointer;
+				font-size: 3em;
+				color: #66E5BF;
+			}
+			.star:checked + label {
+				color: #000000;
+			}
+			input[type="radio"] {
+				display: none;
+			}
+			.star + label:hover,
+			.star + label:hover ~ label,
+			.star:checked + label:hover,
+			.star:checked + label:hover ~ label,
+			.star + label:hover ~ .star:checked + label,
+			.star + label:hover ~ .star:checked ~ label {
+ 	   		   color: #090a09; /* Kleur van de hover sterren */
+			} 
+		.star:checked + label,
+		.star:checked ~ label {
+ 		color: #000000; /* Kleur van de geselecteerde sterren */
+		}
 		</style>
 	</head>
+
+
 	<body>
 		<h1>Rating</h1>
+		<form method="post" class="rating-form">
+			<label for="star-rating"> Jouw beoordeling:</label>
+				<div class="star-rating">
+			 		 <input id="star1" name="rating" type="radio" value="1" class="star"/>
+			 		 <label for="star1" class="star">&#9734;</label>
 
-		<!-- Dit zijn de SVG's van de sterren. Maar horen die wel in HTML, of is dit eigenlijk styling?
+					 <input id="star2" name="rating" type="radio" value="2" class="star"/>
+			  		 <label for="star2" class="star">&#9734;</label>
 
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-				<path fill="#66E5BF" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798zM16 23.547l-6.983 3.671 1.334-7.776-5.65-5.507 7.808-1.134 3.492-7.075 3.492 7.075 7.807 1.134-5.65 5.507 1.334 7.776-6.983-3.671z"></path>
-			</svg>
+			 		 <input id="star3" name="rating" type="radio" value="3" class="star"/>
+			 		 <label for="star3" class="star">&#9734;</label>
 
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-				<path fill="#66E5BF" d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"></path>
-			</svg>
-		-->
+			  		 <input id="star4" name="rating" type="radio" value="4" class="star"/>
+			 		 <label for="star4" class="star">&#9734;</label>
 
-		<!-- Waarschijnlijk wil je je rating ooit opslaan, dus heb je een formulier nodig -->
-		<form method="post">
-
-			<!-- Hint: hoeveel verschillende ratings kun je geven? -->
-
+			 		 <input id="star5" name="rating" type="radio" value="5" class="star"/>
+			 		 <label for="star5" class="star">&#9734;</label>
+			</div>
 		</form>
-
+		  
 		<details open>
 			<summary>Demo video</summary>
 			<video src="assets/rating.mp4" width="271" height="110" controls muted autoplay loop>

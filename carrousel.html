@@ -7,32 +7,77 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
-
 			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
+			ul{
+				list-style-type: none;
+				display: flex;
+				overflow-x: scroll;
+				& li{
+					display: flex;
+					justify-content: center;
+					padding: 2em 5em;
+					background-color: aquamarine;
+					min-width: 100%;
+					height: 20em;
+					justify-content: center;
+				}
+				& li:nth-child(odd){
+					background-color: hsl(268, 91%, 61%);
+				}
+				& blockquote{
+					font-weight: 900;
+				    font-style: italic;
+					font-size: 2em;
+					font-family: 'Open Sans', sans-serif;
+					white-space: pre-line;
+				}
+			}
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
+
 		</script>
 	</head>
 	<body>
-		<h1>Carrousel</h1>
-
-		<!-- Content
-
-		“Websites leren bouwen, én praktijkervaring opdoen?”
-
-		“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
-
-		“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
-
-		“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
-
-		“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
-
-		“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
-
-		-->
-
+	<h1>Carrousel</h1>
+	<section class="carrousel">
+		<ul>
+			<li>
+				<blockquote>
+					“Websites leren bouwen, én 
+					praktijkervaring opdoen?”
+				</blockquote>
+			</li>
+			<li>
+				<blockquote>
+					“FDND is de enige HBO-opleiding voor 
+					Frontend Development in Nederland, in twee 
+					jaar stomen wij jou klaar voor het werkveld”
+				</blockquote>
+			</li>
+			<li>
+				<blockquote>
+					“In het studiomodel werken studenten onder 
+					begeleiding van coaches en experts uit het vakgebied 
+					aan praktijkgerichte opdrachten”
+				</blockquote>
+			</li>
+			<li>
+				<blockquote>
+					“Bij FDND leer je websites bouwen en andere 
+					belangrijke skills die jij in de praktijk toe kan passen”
+				</blockquote>
+			</li>
+			<li>
+				<blockquote>
+					“Een Associate degree-opleiding is een tweejarige 
+					hbo-opleiding op niveau 5”
+				</blockquote>
+			</li>
+		</ul>
+		<button>Vorige</button>
+		<button>Volgende</button>
+	</section>
 		<details open>
 			<summary>Demo video</summary>
 			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted autoplay loop>
